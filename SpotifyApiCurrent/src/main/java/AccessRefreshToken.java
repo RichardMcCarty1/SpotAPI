@@ -11,11 +11,11 @@ import org.apache.hc.core5.http.ParseException;
 
 public class AccessRefreshToken {
     //Create variables for API instance
-    private static final String clientId = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-    private static final String clientSecret = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz";
+    private static final String clientId = "cf11d71b136b4eadae60594486df773f";
+    private static final String clientSecret = "58175bf56bdd460eaf4120cbd7101c78";
     //Dummy URI
     private static final URI redirectUri = SpotifyHttpManager.makeUri("http://localhost:8888/callback/");
-    private static final String code = "URI Code Here";
+    private static final String code = "AQCpQE-GfwHCKMb2qPxjrgSoi6rX2-lZjLcYvYaF829cC-Ce9NJxmJ13se-qlPlNWMbUkKtQWoxM6VFbdcPEJk2YngKyo0wA1ROY4FOb_dI1DfFcVQJvzXXmw8tOSkf2IlIrVkAlT7GuPJ3_klqkw8IHyB7APfJQcETDAuCZD8mQwCMN5_0YZ0wFBdojcka9Nd2hQr8--nY6K9gOEwMppQ";
 
     //Build spotAPI instance with initialized variables
     private static final SpotifyApi spotApi = new SpotifyApi.Builder()
@@ -36,6 +36,9 @@ public class AccessRefreshToken {
             // Set access and refresh tokens for spotApi instance given authCodeCredentials results
             spotApi.setAccessToken(authCodeCredentials.getAccessToken());
             spotApi.setRefreshToken(authCodeCredentials.getRefreshToken());
+            System.out.println(spotApi.getAccessToken());
+            System.out.println(spotApi.getRefreshToken());
+
 
             //Multi-Exception Catch
         } catch (IOException | ParseException | SpotifyWebApiException e) {

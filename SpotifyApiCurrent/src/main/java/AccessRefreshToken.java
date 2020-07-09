@@ -1,3 +1,5 @@
+import java.io.IOException;
+import java.net.URI;
 import com.wrapper.spotify.SpotifyApi;
 import com.wrapper.spotify.SpotifyHttpManager;
 import com.wrapper.spotify.exceptions.SpotifyWebApiException;
@@ -5,16 +7,15 @@ import com.wrapper.spotify.model_objects.credentials.AuthorizationCodeCredential
 import com.wrapper.spotify.requests.authorization.authorization_code.AuthorizationCodeRequest;
 import org.apache.hc.core5.http.ParseException;
 
-import java.io.IOException;
-import java.net.URI;
+
 
 public class AccessRefreshToken {
     //Create variables for API instance
-    private static final String clientId = "cf11d71b136b4eadae60594486df773f";
-    private static final String clientSecret = "58175bf56bdd460eaf4120cbd7101c78";
+    private static final String clientId = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+    private static final String clientSecret = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz";
     //Dummy URI
     private static final URI redirectUri = SpotifyHttpManager.makeUri("http://localhost:8888/callback/");
-    private static final String code = "AQBQqWOWtn2Wo7nIKQRLZEfWUYjzeC30QbMC7y31oJvhANBD8QpsRZGSTcS1fLRT2DIzySf7E9eLKJtBjWIatCn7X_bPq117IyU8YWEqH0MjEnOJM6lXk45cgsFQZ69WfLEK2n0N65k5hlSaqKSa9cYJkKQtSJzKI59ImyaayQG_x3h88aAMPo02kNQ2Q70xWjQYpBzGnOOANLo26GiB_A";
+    private static final String code = "URI Code Here";
 
     //Build spotAPI instance with initialized variables
     private static final SpotifyApi spotApi = new SpotifyApi.Builder()
@@ -36,9 +37,8 @@ public class AccessRefreshToken {
             spotApi.setAccessToken(authCodeCredentials.getAccessToken());
             spotApi.setRefreshToken(authCodeCredentials.getRefreshToken());
 
-            System.out.println("Expires in: " + authCodeCredentials.getExpiresIn());
             //Multi-Exception Catch
-        } catch (IOException | SpotifyWebApiException | ParseException e) {
+        } catch (IOException | ParseException | SpotifyWebApiException e) {
             System.out.println("Error: " + e.getMessage());
         }
     }

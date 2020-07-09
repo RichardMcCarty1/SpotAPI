@@ -6,8 +6,8 @@ import java.net.URI;
 
 public class AuthCodeUri {
     //Create variables for API instance
-        private static final String clientId = "cf11d71b136b4eadae60594486df773f";
-        private static final String clientSecret = "58175bf56bdd460eaf4120cbd7101c78";
+        private static final String clientId = "xxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        private static final String clientSecret = "zzzzzzzzzzzzzzzzzzzzzzzzzzzz";
         //Dummy URI
         private static final URI redirectUri = SpotifyHttpManager.makeUri("http://localhost:8888/callback/");
 
@@ -18,7 +18,7 @@ public class AuthCodeUri {
                 .setRedirectUri(redirectUri)
                 .build();
 
-        //Build authUriRequest with declared scope & spotApi instance
+        //Build authUriRequest with declared scope & spotApi instance for clientID and clientSecret
         private static final AuthorizationCodeUriRequest authUriRequest = spotApi.authorizationCodeUri()
                 .scope("user-read-currently-playing")
                 .build();

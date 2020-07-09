@@ -10,10 +10,10 @@ import com.wrapper.spotify.requests.data.player.GetUsersCurrentlyPlayingTrackReq
 import org.apache.hc.core5.http.ParseException;
 
 public class AuthRefresh {
-    private static final String clientId = "cf11d71b136b4eadae60594486df773f";
-    private static final String clientSecret = "58175bf56bdd460eaf4120cbd7101c78";
-    private static final String refreshToken = "AQB2LKklgnc8H_DlHR9nG7muZuZ3KJL9b2jrqTJBTkWRa19QnpxiACPZwj3AtssVG0Qvz_w3-P2d-YTOPJ67t9hDdhU9YYvQNc-E-ft2WSmUxv0CPkVcSEbIPqa2NVzy8gc";
-    private static final String accessToken = "BQDglNEWUOGV_cocwdQ3X10OGAzWJMTslWlD2q_eaPxxWy24_jb4MAVnY6RMann4Iw802_SEQHGXBaYr5aIYt69XOKJUkjpcDAuYUEXeyE8ii5IOM68jf4i_kSS4Jo3xTqd0f2Z533lDgnljOBsk";
+    private static final String clientId = "z";
+    private static final String clientSecret = "x";
+    private static final String refreshToken = "c";
+    private static final String accessToken = "v";
 
     //Build spotApi instance
     private static final SpotifyApi spotApi = new SpotifyApi.Builder()
